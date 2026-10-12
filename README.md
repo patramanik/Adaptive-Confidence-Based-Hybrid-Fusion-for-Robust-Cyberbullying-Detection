@@ -225,23 +225,24 @@ Adaptive-Confidence-Based-Hybrid-Fusion-for-Robust-Cyberbullying-Detection/
 ├── README.md
 │   └── Comprehensive research documentation, mathematical formulation, and benchmark metrics
 │
-├── Adaptive_Hybrid_Cyberbullying_Pipeline_RL_Enhanced.ipynb
-│   └── End-to-end executable Jupyter / Google Colab notebook containing all pipeline stages:
-│       ├── Step 1 & 1B: Hardware Verification & RL Libraries Setup
-│       ├── Step 2: Multi-Source Dataset Ingestion & Harmonization (AndrewMVD, MRMORJ, MOMO)
-│       ├── Step 3: Text Cleaning Pipeline (Emoji Demojization, Leetspeak Normalization)
-│       ├── Step 4: Stratified Train / Val / Test / Calibration Splitting
-│       ├── Step 5A: Classical ML Pipeline (Word/Char TF-IDF, 9 Features, 5-Fold Stacking)
-│       ├── Step 5B: Deep Transformer Pipeline (RoBERTa-base + CNN-BiLSTM Head)
-│       ├── Step 6 & 7: Adaptive Confidence-Based Hybrid Fusion
-│       ├── Step 8A: Cross-Dataset Generalization Analysis
-│       ├── Step 8B: Adversarial Lexical Obfuscation Robustness Testing (15% & 35% Noise)
-│       ├── Step 8C & 8D: Performance Evaluation & Hardware Efficiency Profiling
-│       ├── Step 9: 6-Panel Visual Diagnostic Dashboard
-│       ├── Step 10: Production Architecture & Recommendations
-│       ├── Phase 2 (Steps 11-13): Gymnasium FusionEnv & PPO Policy Optimization
-│       ├── Step 14 & 15: Decision Threshold Tuning (tau* = 0.50) & Final Test Benchmark
-│       └── Step 16: Research Paper Conclusions & RL Impact Summary
+├── notebooks/
+│   └── Adaptive_Hybrid_Cyberbullying_Pipeline_RL_Enhanced.ipynb
+│       └── End-to-end executable Jupyter / Google Colab notebook containing all pipeline stages:
+│           ├── Step 1 & 1B: Hardware Verification & RL Libraries Setup
+│           ├── Step 2: Multi-Source Dataset Ingestion & Harmonization (AndrewMVD, MRMORJ, MOMO)
+│           ├── Step 3: Text Cleaning Pipeline (Emoji Demojization, Leetspeak Normalization)
+│           ├── Step 4: Stratified Train / Val / Test / Calibration Splitting
+│           ├── Step 5A: Classical ML Pipeline (Word/Char TF-IDF, 9 Features, 5-Fold Stacking)
+│           ├── Step 5B: Deep Transformer Pipeline (RoBERTa-base + CNN-BiLSTM Head)
+│           ├── Step 6 & 7: Adaptive Confidence-Based Hybrid Fusion
+│           ├── Step 8A: Cross-Dataset Generalization Analysis
+│           ├── Step 8B: Adversarial Lexical Obfuscation Robustness Testing (15% & 35% Noise)
+│           ├── Step 8C & 8D: Performance Evaluation & Hardware Efficiency Profiling
+│           ├── Step 9: 6-Panel Visual Diagnostic Dashboard
+│           ├── Step 10: Production Architecture & Recommendations
+│           ├── Phase 2 (Steps 11-13): Gymnasium FusionEnv & PPO Policy Optimization
+│           ├── Step 14 & 15: Decision Threshold Tuning (tau* = 0.50) & Final Test Benchmark
+│           └── Step 16: Research Paper Conclusions & RL Impact Summary
 │
 └── Paper_ID_366__Adaptive_Confidence_Based_Hybrid_Fusion_for_Robust_Cyberbullying_Detection_Using_Machine_Learning_and_Transformer_Models (1).pdf
     └── Full research paper manuscript with theoretical foundations and empirical analysis
@@ -254,7 +255,7 @@ Adaptive-Confidence-Based-Hybrid-Fusion-for-Robust-Cyberbullying-Detection/
 The entire framework is designed to run directly via **Google Colab (Tesla T4 GPU)** or **Local Jupyter**:
 
 ### Option 1: Run in Google Colab (Recommended)
-1. Open [Google Colab](https://colab.research.google.com/) and upload [Adaptive_Hybrid_Cyberbullying_Pipeline_RL_Enhanced.ipynb](file:///c:/Users/manik/Downloads/Adaptive_Hybrid_Cyberbullying_Pipeline_RL_Enhanced/Adaptive_Hybrid_Cyberbullying_Pipeline_RL_Enhanced.ipynb).
+1. Open [Google Colab](https://colab.research.google.com/) and upload `notebooks/Adaptive_Hybrid_Cyberbullying_Pipeline_RL_Enhanced.ipynb`.
 2. Select GPU accelerator: **Runtime** $\to$ **Change runtime type** $\to$ **T4 GPU**.
 3. Run the notebook's setup cell (`Step 1`), which automatically installs all dependencies:
    ```bash
@@ -278,7 +279,7 @@ The entire framework is designed to run directly via **Google Colab (Tesla T4 GP
    ```
 3. **Launch the notebook**:
    ```bash
-   jupyter notebook Adaptive_Hybrid_Cyberbullying_Pipeline_RL_Enhanced.ipynb
+   jupyter notebook notebooks/Adaptive_Hybrid_Cyberbullying_Pipeline_RL_Enhanced.ipynb
    ```
 
 ---
