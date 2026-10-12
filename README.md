@@ -217,61 +217,69 @@ Test samples were synthetically corrupted with leetspeak substitutions (`hate` $
 
 ## 📂 Repository Structure
 
+The complete research pipeline, model training, reinforcement learning gating, adversarial stress tests, and visual dashboards are fully self-contained within the executable notebook:
+
 ```plaintext
 Adaptive-Confidence-Based-Hybrid-Fusion-for-Robust-Cyberbullying-Detection/
 │
-├── README.md                                                        # Comprehensive project documentation
-├── Adaptive_Hybrid_Cyberbullying_Pipeline_RL_Enhanced.ipynb        # End-to-end executable Jupyter/Colab notebook
-├── Paper_ID_366__Adaptive_Confidence_Based_Hybrid_Fusion_...pdf    # Full published research paper
+├── README.md
+│   └── Comprehensive research documentation, mathematical formulation, and benchmark metrics
 │
-├── src/                                                             # Core implementation modules (planned / modularized)
-│   ├── preprocessing.py                                             # Text cleaning, demojization, leetspeak decoder
-│   ├── classical_pipeline.py                                        # FeatureUnion + Stacking ML + Calibration
-│   ├── transformer_head.py                                          # RoBERTa-base + CNN-BiLSTM + Attention Head
-│   ├── rl_environment.py                                            # Gymnasium FusionEnv + 8D State Extraction
-│   ├── ppo_agent.py                                                 # Contextual Bandit + Stable-Baselines3 PPO
-│   └── fusion_inference.py                                          # Runtime dual-tier inference engine
+├── Adaptive_Hybrid_Cyberbullying_Pipeline_RL_Enhanced.ipynb
+│   └── End-to-end executable Jupyter / Google Colab notebook containing all pipeline stages:
+│       ├── Step 1 & 1B: Hardware Verification & RL Libraries Setup
+│       ├── Step 2: Multi-Source Dataset Ingestion & Harmonization (AndrewMVD, MRMORJ, MOMO)
+│       ├── Step 3: Text Cleaning Pipeline (Emoji Demojization, Leetspeak Normalization)
+│       ├── Step 4: Stratified Train / Val / Test / Calibration Splitting
+│       ├── Step 5A: Classical ML Pipeline (Word/Char TF-IDF, 9 Features, 5-Fold Stacking)
+│       ├── Step 5B: Deep Transformer Pipeline (RoBERTa-base + CNN-BiLSTM Head)
+│       ├── Step 6 & 7: Adaptive Confidence-Based Hybrid Fusion
+│       ├── Step 8A: Cross-Dataset Generalization Analysis
+│       ├── Step 8B: Adversarial Lexical Obfuscation Robustness Testing (15% & 35% Noise)
+│       ├── Step 8C & 8D: Performance Evaluation & Hardware Efficiency Profiling
+│       ├── Step 9: 6-Panel Visual Diagnostic Dashboard
+│       ├── Step 10: Production Architecture & Recommendations
+│       ├── Phase 2 (Steps 11-13): Gymnasium FusionEnv & PPO Policy Optimization
+│       ├── Step 14 & 15: Decision Threshold Tuning (tau* = 0.50) & Final Test Benchmark
+│       └── Step 16: Research Paper Conclusions & RL Impact Summary
 │
-└── figures/                                                         # Architectural charts, confusion matrices, ROC plots
+└── Paper_ID_366__Adaptive_Confidence_Based_Hybrid_Fusion_for_Robust_Cyberbullying_Detection_Using_Machine_Learning_and_Transformer_Models (1).pdf
+    └── Full research paper manuscript with theoretical foundations and empirical analysis
 ```
 
 ---
 
-## 🚀 Installation & Quickstart
+## 🚀 Execution & Quickstart Guide
 
-### Prerequisites
-- Python 3.10 or higher
-- NVIDIA GPU with CUDA support (e.g., Tesla T4, V100, A100, RTX 3060+) recommended
+The entire framework is designed to run directly via **Google Colab (Tesla T4 GPU)** or **Local Jupyter**:
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/patramanik/Adaptive-Confidence-Based-Hybrid-Fusion-for-Robust-Cyberbullying-Detection.git
-cd Adaptive-Confidence-Based-Hybrid-Fusion-for-Robust-Cyberbullying-Detection
-```
+### Option 1: Run in Google Colab (Recommended)
+1. Open [Google Colab](https://colab.research.google.com/) and upload [Adaptive_Hybrid_Cyberbullying_Pipeline_RL_Enhanced.ipynb](file:///c:/Users/manik/Downloads/Adaptive_Hybrid_Cyberbullying_Pipeline_RL_Enhanced/Adaptive_Hybrid_Cyberbullying_Pipeline_RL_Enhanced.ipynb).
+2. Select GPU accelerator: **Runtime** $\to$ **Change runtime type** $\to$ **T4 GPU**.
+3. Run the notebook's setup cell (`Step 1`), which automatically installs all dependencies:
+   ```bash
+   !pip install -q kagglehub torch transformers datasets accelerate sentencepiece \
+                    emoji contractions ftfy xgboost scikit-learn nltk pandas \
+                    numpy psutil matplotlib seaborn packaging stable-baselines3 gymnasium
+   ```
+4. Run all subsequent cells sequentially to execute the complete pipeline and reproduce the paper's benchmarks.
 
-### 2. Install Required Dependencies
-```bash
-pip install -r requirements.txt
-```
-*Or install directly via pip:*
-```bash
-pip install torch transformers datasets accelerate sentencepiece \
-            emoji contractions ftfy xgboost scikit-learn nltk \
-            pandas numpy psutil matplotlib seaborn gymnasium stable-baselines3 kagglehub
-```
-
-### 3. Run the Research Notebook
-Launch the complete end-to-end pipeline in Jupyter or Google Colab:
-```bash
-jupyter notebook Adaptive_Hybrid_Cyberbullying_Pipeline_RL_Enhanced.ipynb
-```
-The notebook executes:
-1. Multi-source dataset ingestion and label harmonization.
-2. Unified text cleaning, emoji demojization, and leetspeak normalization.
-3. 5-Fold Stratified Classical Stacking training & probability calibration.
-4. Pretrained RoBERTa + CNN-BiLSTM deep learning head fine-tuning & temperature scaling.
-5. Contextual Bandit initialization & 50,000-timestep PPO policy training.
-6. Benchmark evaluations, adversarial robustness stress tests, and 6-panel analytical dashboards.
+### Option 2: Run Locally via Jupyter
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/patramanik/Adaptive-Confidence-Based-Hybrid-Fusion-for-Robust-Cyberbullying-Detection.git
+   cd Adaptive-Confidence-Based-Hybrid-Fusion-for-Robust-Cyberbullying-Detection
+   ```
+2. **Install dependencies**:
+   ```bash
+   pip install torch transformers datasets accelerate sentencepiece emoji contractions \
+               ftfy xgboost scikit-learn nltk pandas numpy psutil matplotlib seaborn \
+               packaging stable-baselines3 gymnasium kagglehub
+   ```
+3. **Launch the notebook**:
+   ```bash
+   jupyter notebook Adaptive_Hybrid_Cyberbullying_Pipeline_RL_Enhanced.ipynb
+   ```
 
 ---
 
